@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Menu from "./components/Menu";
+import Navbar from "./components/Navbar";
+import Wrapper from "./components/Wrapper";
+import { useState } from "react";
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex w-full">
+      <Menu
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
+      />
+      <div className="flex-[0.9] ">
+        <Navbar
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
+        />
+        <Wrapper
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
+
+        />
+      </div>
+
     </div>
   );
 }
